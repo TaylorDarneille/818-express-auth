@@ -49,5 +49,5 @@ app.get('/profile', isLoggedIn, (req, res)=>{
 })
 
 app.listen(process.env.PORT, ()=>{
-    console.log('you\'re listening to the spooky sounds of port 8000')
+    console.log(`you\'re listening to the spooky sounds of port ${process.env.PORT}`)
 })

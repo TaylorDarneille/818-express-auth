@@ -10,7 +10,7 @@
 npm i
 ```
 
-3. Create a `config.json` with the following code:
+3. [OPTIONAL] Change the database names in `config/config.json` to names of your choosing:
 ```json
 {
   "development": {
@@ -35,7 +35,7 @@ npm i
 
 4. Create a database
 ```
-sequelize db:create <insert db name here>
+sequelize db:create
 ```
 
 5. Migrate the `user` model to your database
@@ -43,6 +43,6 @@ sequelize db:create <insert db name here>
 sequelize db:migrate
 ```
 
-6. Add `SESSION_SECRET` and `PORT`environment variableS in a `.env` file
+6. Add `SESSION_SECRET` and `PORT`environment variables in a `.env` file
 
 7. Run `nodemon` to start up app
