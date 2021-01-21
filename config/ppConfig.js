@@ -2,6 +2,8 @@ const passport = require('passport')
 const db = require('../models')
 const LocalStrategy = require('passport-local')
 
+// tell the passport to serialize the user using the id
+// by passing it into the doneCallback
 passport.serializeUser((user, doneCallback)=>{
     console.log('serializing user...')
     doneCallback(null, user.id)
@@ -59,8 +61,16 @@ const fieldsToCheck = {
     passwordField: 'password'
 }
 
+// Create an instance of Local Strategy
+// --> constructor arg 1:
+// an object that indicates how we're going refer to the two fields
+// we're checking (for ex. we're using email instead of username)
+// --> constructor arg 2:
+// a callback that is ready to receive the two fields we're checking
+// as well as a doneCallback
 const strategy = new LocalStrategy(fieldsToCheck, findAndLogInUser)
 
+// tell this instance of passport to use the strategy we just configured
 passport.use(strategy)
 
 // passport.use(new LocalStrategy({
